@@ -52,6 +52,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   });
 
+   /* Packs
+  ===================================================================== */
+  let packs = await charadex.initialize.page(null, charadex.page.index.packs, (arr) => {
+    
+    // Splice the silly little array
+    let sliceAmount = charadex.page.index.packs.amount || 6;
+    arr.splice(sliceAmount, arr.length);
+
+  });
+
 
   /* Load Page
   ===================================================================== */

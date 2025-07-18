@@ -588,6 +588,12 @@ charadex.page.index = {
     ... charadex.page.masterlist,
     dexSelector: 'design',
     amount: 4,
+  },
+
+  packs: {
+    ... charadex.page.packs,
+    dexSelector: 'pack',
+    amount: 4,
   }
 
 };
