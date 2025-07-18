@@ -26,11 +26,13 @@ charadex.site = {
 /* ==================================================================== */
 charadex.sheet = {
 
-  id: "1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak",
+  id: "1bzDVed_31khANVYCauDfqEcwozGkxFlLTw1tvbC31FU",
 
   pages: {
     masterlist:    "masterlist",
     masterlistLog: "masterlist log",
+    packs:         "packs",
+    packsLog:      "packs log",
     inventory:     "inventory",
     inventoryLog:  "inventory log",
     items:         "items",
@@ -43,11 +45,9 @@ charadex.sheet = {
   options: {
 
     designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Slot', 'MYO Design'],
-    statuses: ['All', 'Resell', 'Trade', 'Gift', 'Voided', 'For Sale', 'Purchased'],
-    rarity: ['All', 'Common', 'Uncommon', 'Rare', 'Very Rare', 'Legendary'],
     species: ['All', 'Dog', 'Cat', 'Bunny'],
     itemTypes: ['All', 'Currency', 'MYO Slot', 'Pet', 'Trait', 'Misc'],
-    traitTypes: ['All', 'Ears', 'Eyes', 'Body', 'Limbs', 'Tails', 'Misc', 'Mutations']
+    traitTypes: ['All', 'Ears', 'Eyes', 'Body', 'Limbs', 'Tails', 'Misc', 'Mutations'],
 
   }
 
@@ -329,8 +329,6 @@ charadex.page.masterlist = {
     toggle: true,
     parameters: {
       'Design Type': charadex.sheet.options.designTypes,
-      'Status': charadex.sheet.options.statuses,
-      'Rarity': charadex.sheet.options.rarity,
     }
   },
 
@@ -355,6 +353,74 @@ charadex.page.masterlist = {
     [charadex.sheet.pages.masterlistLog]: {
 
       sheetPage: charadex.sheet.pages.masterlistLog,
+      primaryProperty: 'id',
+      relatedProperty: 'id',
+      dexSelector: 'log',
+      profileProperty: 'design',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "timestamp",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: false,
+        amount: 12,
+      },
+
+    }
+
+  }
+
+};
+
+/* Packs
+/* --------------------------------------------------------------- */
+charadex.page.packs = {
+
+  sheetPage: charadex.sheet.pages.packs,
+  sitePage: 'packs',
+  dexSelector: 'charadex',
+  profileProperty: 'design',
+
+  sort: {
+    toggle: true,
+    key: "id",
+    order: "desc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  fauxFolder: {
+    toggle: true,
+    folderProperty: 'Packs',
+    parameters: charadex.sheet.options.packs,
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'ID', 'Design', 'Owner', 'Artist']
+  },
+
+  prevNext: {
+    toggle: true,
+  },
+
+  relatedData: {
+
+    [charadex.sheet.pages.packsLog]: {
+
+      sheetPage: charadex.sheet.pages.packsLog,
       primaryProperty: 'id',
       relatedProperty: 'id',
       dexSelector: 'log',
@@ -494,7 +560,6 @@ charadex.page.inventory = {
       toggle: true,
       parameters: {
         'Type': charadex.sheet.options.itemTypes,
-        'Rarity': charadex.sheet.options.rarity,
       }
     },
 
