@@ -29,18 +29,19 @@ charadex.sheet = {
   id: "1bzDVed_31khANVYCauDfqEcwozGkxFlLTw1tvbC31FU",
 
   pages: {
-    masterlist:    "masterlist",
-    masterlistLog: "masterlist log",
-    activityLog:   "activity log",
-    packs:         "packs",
-    packsLog:      "packs log",
-    inventory:     "inventory",
-    inventoryLog:  "inventory log",
-    items:         "items",
-    traits:        "traits",
-    prompts:       "prompts",
-    faq:           "faq",
-    staff:         "staff",
+    masterlist:             "masterlist",
+    masterlistLog:          "masterlist log",
+    activityLog:            "activity log",
+    packs:                  "packs",
+    packsTransactionLog:    "packs transaction log",
+    packsActivityLog:       "packs activity log",
+    inventory:              "inventory",
+    inventoryLog:           "inventory log",
+    items:                  "items",
+    traits:                 "traits",
+    prompts:                "prompts",
+    faq:                    "faq",
+    staff:                  "staff",
   },
 
   options: {
@@ -447,12 +448,36 @@ charadex.page.packs = {
 
   relatedData: {
 
-    [charadex.sheet.pages.packsLog]: {
+    [charadex.sheet.pages.packsTransactionLog]: {
 
-      sheetPage: charadex.sheet.pages.packsLog,
+      sheetPage: charadex.sheet.pages.packsTransactionLog,
       primaryProperty: 'id',
       relatedProperty: 'id',
       dexSelector: 'log',
+      profileProperty: 'design',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "date",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: false,
+        amount: 12,
+      },
+
+    },
+
+    [charadex.sheet.pages.packsActivityLog]: {
+
+      sheetPage: charadex.sheet.pages.packsActivityLog,
+      primaryProperty: 'id',
+      relatedProperty: 'id',
+      dexSelector: 'activity',
       profileProperty: 'design',
       profileToggle: false,
 

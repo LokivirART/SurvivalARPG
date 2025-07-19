@@ -237,8 +237,12 @@
                             aria-controls="profile" aria-selected="true">Profile</a>
                     </li>
                     <li class="col p-1 nav-item" role="presentation">
-                        <a class="w-100 btn btn-primary" id="logs-tab" data-toggle="tab" href="#logs"
-                            aria-controls="logs" aria-selected="false">Logs</a>
+                        <a class="w-100 btn btn-primary" id="activity-tab" data-toggle="tab" href="#activity"
+                            aria-controls="activity" aria-selected="false">Activity Logs</a>
+                    </li>
+                    <li class="col p-1 nav-item" role="presentation">
+                        <a class="w-100 btn btn-primary" id="transactions-tab" data-toggle="tab" href="#transactions"
+                            aria-controls="transactions" aria-selected="false">Transaction Logs</a>
                     </li>
                 </ul>
                 <hr class="my-0">
@@ -355,12 +359,68 @@
                             </div>
 
                         </div>
+
+                        <!-- Where to Update -->
+                        <div class="card bg-faded py-2 px-3 mt-3 small text-center">
+                            <b>If you need to update this entry, please do so <a
+                                    href="https://discord.com/channels/1395908761251741796/1395941024685232309">here</a>.</b>
+                        </div>
+                    </div>
+
+                    <!-- Transaction Logs
+                              <!-- ----------------------------------------------------------- -->
+                    <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab"
+                        tabindex="0">
+                        <h4 class="text-primary">Activity Log</h4>
+                        <div class="card bg-faded p-4" id="activity-gallery">
+
+                            <!-- List -->
+                            <!-- --------------------------------------------------------------- -->
+                            <div class="row no-gutters">
+                                <div class="col-md-3"><b>Date</b></div>
+                                <div class="col-md-9"><b>Activity</b></div>
+                            </div>
+                            <hr>
+                            <div class="activity-list"></div>
+
+                            <!-- List Item -->
+                            <!-- --------------------------------------------------------------- -->
+                            <div style="display: none;">
+                                <div class="row no-gutters" id="activity-gallery-item">
+                                    <div class="col-md-3"><span class="date"></span></div>
+                                    <div class="col-md-9"><span class="activity"></span></div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination
+                                  <!-- --------------------------------------------------------------- -->
+                            <div style="display: none;" class="activity-pagination-container">
+                                <hr>
+                                <div class="nav d-flex justify-content-center mb-n4">
+                                    <div class="btn-prev page-item"><a class="page-link"><i
+                                                class="fa fa-chevron-left"></i></a></div>
+                                    <ul
+                                        class="pagination activity-pagination activity-pagination-top justify-content-center m-0">
+                                    </ul>
+                                    <div class="btn-next page-item"><a class="page-link"><i
+                                                class="fa fa-chevron-right"></i></a></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Where to Update -->
+                        <div class="card bg-faded py-2 px-3 mt-3 small text-center">
+                            <b>If you need to update this entry, please do so <a
+                                    href="https://discord.com/channels/1395908761251741796/1395941024685232309">here</a>.</b>
+                        </div>
                     </div>
 
 
-                    <!-- Logs
+                    <!-- Transaction Logs
           <!-- ----------------------------------------------------------- -->
-                    <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab" tabindex="0">
+                    <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab"
+                        tabindex="0">
                         <h4 class="text-primary">Transaction Log</h4>
                         <div class="card bg-faded p-4" id="log-gallery">
 
@@ -397,40 +457,39 @@
                             </div>
 
                         </div>
-                    </div>
 
-                    <!-- Where to Update -->
-                    <div class="card bg-faded py-2 px-3 mt-3 small text-center">
-                        <b>If you need to update this entry, please do so <a
-                                href="https://discord.com/channels/1395908761251741796/1395941024685232309">here</a>.</b>
-                    </div>
+                        <!-- Where to Update -->
+                        <div class="card bg-faded py-2 px-3 mt-3 small text-center">
+                            <b>If you need to update this entry, please do so <a
+                                    href="https://discord.com/channels/1395908761251741796/1395941024685232309">here</a>.</b>
+                        </div>
 
+                    </div>
                 </div>
             </div>
+
+
         </div>
 
+        <!-- ----------------------------------------------------------------- -->
+        <!-- JS                                                                -->
+        <!-- ----------------------------------------------------------------- -->
 
-    </div>
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <!-- ----------------------------------------------------------------- -->
-    <!-- JS                                                                -->
-    <!-- ----------------------------------------------------------------- -->
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <!-- Bootstrap Multiselect -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
-
-    <!-- Bootstrap Multiselect -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
-    <!-- Charadex Script -->
-    <script src="styles/js/pages/packs.js" type="module"></script>
-    <script src="styles/js/pages/base.js" type="module"></script>
+        <!-- Charadex Script -->
+        <script src="styles/js/pages/packs.js" type="module"></script>
+        <script src="styles/js/pages/base.js" type="module"></script>
 
 
 </body>

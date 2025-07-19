@@ -18,10 +18,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (listData.type == 'profile') {
 
         // Create the log dex
-        if (charadex.tools.checkArray(listData.profileArray[0].packslog)) {
+        if (charadex.tools.checkArray(listData.profileArray[0].packstransactionlog)) {
           let logs = await charadex.initialize.page(
-            listData.profileArray[0].packslog,
-            charadex.page.packs.relatedData['packs log']
+            listData.profileArray[0].packstransactionlog,
+            charadex.page.packs.relatedData['packs transaction log']
+          );
+        }
+
+        // Create the log dex
+        if (charadex.tools.checkArray(listData.profileArray[0].packsactivitylog)) {
+          let logs = await charadex.initialize.page(
+            listData.profileArray[0].packsactivitylog,
+            charadex.page.packs.relatedData['packs activity log']
           );
         }
 
