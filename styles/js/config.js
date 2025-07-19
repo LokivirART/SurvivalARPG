@@ -39,14 +39,16 @@ charadex.sheet = {
     traits:        "traits",
     prompts:       "prompts",
     faq:           "faq",
-    staff:         "mods",
+    staff:         "staff",
   },
 
   options: {
 
     designTypes: ['All', 'Official Design', 'Guest Design', 'MYO Slot', 'MYO Design'],
-    species: ['All', 'Dog', 'Cat', 'Bunny'],
-    itemTypes: ['All', 'Currency', 'MYO Slot', 'Pet', 'Trait', 'Misc'],
+    species: ['All', 'Sp1', 'Sp2', 'Sp3'],
+    rarity: ['All', 'Common', 'Uncommon', 'Rare'],
+    speciesGroup: ['All', 'G1', 'G2', 'G3'],
+    itemTypes: ['All', 'Currency', 'MYO Slot', 'Trait', 'Misc'],
     traitTypes: ['All', 'Ears', 'Eyes', 'Body', 'Limbs', 'Tails', 'Misc', 'Mutations'],
 
   }
@@ -328,14 +330,16 @@ charadex.page.masterlist = {
   filters: {
     toggle: true,
     parameters: {
+      'Species': charadex.sheet.options.species,
+      'Rarity': charadex.sheet.options.rarity,
       'Design Type': charadex.sheet.options.designTypes,
     }
   },
 
   fauxFolder: {
     toggle: true,
-    folderProperty: 'Species',
-    parameters: charadex.sheet.options.species,
+    folderProperty: 'SpeciesGroup',
+    parameters: charadex.sheet.options.speciesGroup,
   },
 
   search: {
