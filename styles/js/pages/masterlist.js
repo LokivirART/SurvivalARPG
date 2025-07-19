@@ -25,6 +25,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           );
         }
 
+        // Create the activity log dex
+        if (charadex.tools.checkArray(listData.profileArray[0].activitylog)) {
+          let logs = await charadex.initialize.page(
+            listData.profileArray[0].activitylog,
+            charadex.page.masterlist.relatedData['activity log']
+          );
+        }
+
       }
 
     }

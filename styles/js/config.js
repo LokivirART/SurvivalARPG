@@ -31,6 +31,7 @@ charadex.sheet = {
   pages: {
     masterlist:    "masterlist",
     masterlistLog: "masterlist log",
+    activityLog:   "activity log",
     packs:         "packs",
     packsLog:      "packs log",
     inventory:     "inventory",
@@ -365,7 +366,31 @@ charadex.page.masterlist = {
 
       sort: {
         toggle: true,
-        key: "timestamp",
+        key: "date",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: false,
+        amount: 12,
+      },
+
+    },
+
+    [charadex.sheet.pages.activityLog]: {
+
+      sheetPage: charadex.sheet.pages.activityLog,
+      primaryProperty: 'id',
+      relatedProperty: 'id',
+      dexSelector: 'activity',
+      profileProperty: 'design',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "date",
         order: "desc",
         parameters: []
       },
@@ -433,7 +458,7 @@ charadex.page.packs = {
 
       sort: {
         toggle: true,
-        key: "timestamp",
+        key: "date",
         order: "desc",
         parameters: []
       },
@@ -456,7 +481,7 @@ charadex.page.inventory = {
 
   // Dex Set Up
   sheetPage: charadex.sheet.pages.inventory,
-  sitePage: 'inventories',
+  sitePage: 'players',
   dexSelector: 'charadex',
   profileProperty: 'username',
 
